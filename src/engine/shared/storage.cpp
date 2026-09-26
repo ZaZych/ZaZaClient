@@ -109,6 +109,7 @@ public:
 			"demos/auto/race",
 			"demos/auto/server",
 			"demos/replays",
+			"demos/Clips",
 			"editor",
 			"editor/automap",
 			"ghosts",

@@ -4111,11 +4111,11 @@ void CClient::SaveReplay(const int Length, const char *pFilename)
 		{
 			char aTimestamp[20];
 			str_timestamp(aTimestamp, sizeof(aTimestamp));
-			str_format(aFilename, sizeof(aFilename), "demos/replays/%s_%s_(replay).demo", GameClient()->Map()->BaseName(), aTimestamp);
+			str_format(aFilename, sizeof(aFilename), "demos/Clips/%s_%s_(replay).demo", GameClient()->Map()->BaseName(), aTimestamp);
 		}
 		else
 		{
-			str_format(aFilename, sizeof(aFilename), "demos/replays/%s.demo", pFilename);
+			str_format(aFilename, sizeof(aFilename), "demos/Clips/%s.demo", pFilename);
 			IOHANDLE Handle = m_pStorage->OpenFile(aFilename, IOFLAG_WRITE, IStorage::TYPE_SAVE);
 			if(!Handle)
 			{

@@ -3067,4 +3067,18 @@ void CMenus::RenderSettingsZClient(CUIRect MainView)
 		Column.HSplitTop(LineSize, &Button, &Column);
 		Ui()->DoScrollbarOption(&g_Config.m_TcHammerRadiusScale, &g_Config.m_TcHammerRadiusScale, &Button, "Hammer radius scale", 50, 200, &CUi::ms_LinearScrollbarScale, 0, "%");
 	}
+	// ***** Clip ***** //
+	Column.HSplitTop(MarginBetweenSections, nullptr, &Column);
+	Column.HSplitTop(HeadlineHeight, &Label, &Column);
+	Ui()->DoLabel(&Label, "Clip", HeadlineFontSize, TEXTALIGN_ML);
+	Column.HSplitTop(MarginSmall, nullptr, &Column);
+
+	DoButton_CheckBoxAutoVMarginAndSet(&g_Config.m_ClReplays, "Enable clip recording", &g_Config.m_ClReplays, &Column, LineSize);
+
+	Column.HSplitTop(LineSize, &Button, &Column);
+	Ui()->DoScrollbarOption(&g_Config.m_ClReplayLength, &g_Config.m_ClReplayLength, &Button, "Clip length", 10, 300, &CUi::ms_LinearScrollbarScale, 0, " seconds");
+
+	Column.HSplitTop(MarginSmall, nullptr, &Column);
+	static CButtonContainer s_ReaderButtonClip, s_ClearButtonClip;
+	DoLine_KeyReader(Column, s_ReaderButtonClip, s_ClearButtonClip, "Save clip key", "save_replay");
 }
