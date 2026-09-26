@@ -1028,7 +1028,7 @@ void CPlayers::RenderPlayer(
 		// ZClient: hammer hit radius indicator
 	if(Local && !RenderGhost && Player.m_Weapon == WEAPON_HAMMER && g_Config.m_TcShowHammerRadius)
 	{
-		const float HammerRadius = CCharacterCore::PhysicalSize() * (g_Config.m_TcHammerRadiusScale / 100.0f);
+		const float HammerRadius = CCharacterCore::PhysicalSize() * 0.78f * (g_Config.m_TcHammerRadiusScale / 100.0f);
 		const vec2 HammerCenter = Position + Direction * CCharacterCore::PhysicalSize() * 0.75f;
 
 		Graphics()->TextureClear();
