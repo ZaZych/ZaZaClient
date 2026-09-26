@@ -3048,4 +3048,23 @@ void CMenus::RenderSettingsTClientConfigs(CUIRect MainView)
 	CUIRect EndPad{Content.x, Content.y, Content.w, 5.0f};
 	s_ScrollRegion.AddRect(EndPad);
 	s_ScrollRegion.End();
+		
+}
+
+void CMenus::RenderSettingsZClient(CUIRect MainView)
+{
+	CUIRect Column, Button, Label;
+	Column = MainView;
+
+	Column.HSplitTop(Margin, nullptr, &Column);
+	Column.HSplitTop(HeadlineHeight, &Label, &Column);
+	Ui()->DoLabel(&Label, "Visual", HeadlineFontSize, TEXTALIGN_ML);
+	Column.HSplitTop(MarginSmall, nullptr, &Column);
+
+	DoButton_CheckBoxAutoVMarginAndSet(&g_Config.m_TcShowHammerRadius, "Show hammer hit radius", &g_Config.m_TcShowHammerRadius, &Column, LineSize);
+	if(g_Config.m_TcShowHammerRadius)
+	{
+		Column.HSplitTop(LineSize, &Button, &Column);
+		Ui()->DoScrollbarOption(&g_Config.m_TcHammerRadiusScale, &g_Config.m_TcHammerRadiusScale, &Button, "Hammer radius scale", 50, 200, &CUi::ms_LinearScrollbarScale, 0, "%");
+	}
 }

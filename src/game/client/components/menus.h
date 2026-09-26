@@ -720,6 +720,7 @@ public:
 		SETTINGS_TCLIENT, // TClient
 		SETTINGS_PROFILES, // TClient
 		SETTINGS_CONFIGS, // TClient
+		SETTINGS_ZCLIENT, // ZClient
 		SETTINGS_CREDITS,
 		SETTINGS_LENGTH,
 	};
@@ -868,6 +869,7 @@ private:
 
 	// TClient: found in menus_tclient.cpp
 	void RenderSettingsTClient(CUIRect MainView);
+	void RenderSettingsZClient(CUIRect MainView);
 	void RenderSettingsTClientSettings(CUIRect MainView);
 	void RenderSettingsTClientBindWheel(CUIRect MainView);
 	void RenderSettingsTClientChatBinds(CUIRect MainView);

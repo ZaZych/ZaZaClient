@@ -127,6 +127,10 @@ MACRO_CONFIG_STR(TcWhiteFeetSkin, tc_white_feet_skin, 255, "x_ninja", CFGFLAG_CL
 MACRO_CONFIG_INT(TcRenderWeaponsAsGun, tc_render_weapons_as_gun, 0, 0, 2, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Renders weapons as the gun sprite instead of the weapon, with the exception of hammer and ninja (1 = with hue, 2 = without hue)")
 MACRO_CONFIG_INT(TcMovingTilesEntities, tc_moving_tiles_entities, 0, 0, 1, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Show moving tiles in entities")
 
+//ZClient Hammer Radius
+MACRO_CONFIG_INT(TcShowHammerRadius, tc_show_hammer_radius, 0, 0, 1, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Show hammer hit radius circle")
+MACRO_CONFIG_INT(TcHammerRadiusScale, tc_hammer_radius_scale, 100, 50, 200, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Scale of the hammer hit radius indicator as a percentage")
+
 MACRO_CONFIG_INT(TcMiniDebug, tc_mini_debug, 0, 0, 1, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Show position and angle")
 
 MACRO_CONFIG_INT(TcNotifyWhenLast, tc_last_notify, 0, 0, 1, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Notify when you are last")

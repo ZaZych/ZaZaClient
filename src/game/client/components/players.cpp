@@ -1025,6 +1025,19 @@ void CPlayers::RenderPlayer(
 		}
 	}
 
+		// ZClient: hammer hit radius indicator
+	if(Local && !RenderGhost && Player.m_Weapon == WEAPON_HAMMER && g_Config.m_TcShowHammerRadius)
+	{
+		const float HammerRadius = CCharacterCore::PhysicalSize() * (g_Config.m_TcHammerRadiusScale / 100.0f);
+		const vec2 HammerCenter = Position + Direction * CCharacterCore::PhysicalSize() * 0.75f;
+
+		Graphics()->TextureClear();
+		Graphics()->QuadsBegin();
+		Graphics()->SetColor(1.0f, 1.0f, 1.0f, 0.3f);
+		Graphics()->DrawCircle(HammerCenter.x, HammerCenter.y, HammerRadius, 32);
+		Graphics()->QuadsEnd();
+	}
+
 	// render the "shadow" tee
 	if(!RenderGhost && (g_Config.m_ClUnpredictedShadow == 3 || (Local && g_Config.m_ClUnpredictedShadow == 1) || (!Local && g_Config.m_ClUnpredictedShadow == 2)))
 	{
